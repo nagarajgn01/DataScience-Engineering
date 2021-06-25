@@ -1,3 +1,15 @@
+There are a total of 10 book titles in the library.
+100001, 4
+100002, 5
+100003, 15
+100004, 12
+100005, 3
+100006, 2
+100007, 7
+100008, 9
+100009, 20
+100010, 1
+
 All copies of book id 100006 have been checked out
 
 Top Books 1: 100001, 4

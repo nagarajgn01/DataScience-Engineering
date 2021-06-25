@@ -1,0 +1,3 @@
+checkOut: 100010
+findBook: 100010
+printInventory

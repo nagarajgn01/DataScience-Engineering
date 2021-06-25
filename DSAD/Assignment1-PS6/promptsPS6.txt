@@ -1,3 +1,4 @@
+printInventory
 checkOut: 100001
 checkOut: 100002
 checkOut: 100005

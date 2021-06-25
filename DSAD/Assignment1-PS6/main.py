@@ -57,7 +57,7 @@ class bookNode:
     def _getTopBooks(self):        
         lt = self.getAllData(self)
         lt.sort(key=lambda x:x[1],reverse=True)
-        file = open('outputPS6.txt','a')
+        file = open(dir+'\outputPS6.txt','a')
         string = ''
         for i,x in enumerate(lt[:3]):
             string=string+'Top Books '+str(i+1)+': '+str(x[0])+', '+str(x[1])+'\n'  
@@ -68,7 +68,7 @@ class bookNode:
     
     def printBooks(self):
         lt = self.getAllData(self)
-        file = open('outputPS6.txt','a')
+        file = open(dir+'\outputPS6.txt','a')
         string = 'There are a total of '+str(len(lt))+' book titles in the library.\n'
         for i,x in enumerate(sorted(lt)):
             string = string + str(x[0])+', '+str(x[2])+'\n'
@@ -82,7 +82,7 @@ class bookNode:
         if string=='':
             string = 'Book id '+str(bkID)+' does not exist.\n\n'
         print(string)
-        file = open('outputPS6.txt','a')
+        file = open(dir+'\outputPS6.txt','a')
         file.write(string)
         file.close()            
         
@@ -101,16 +101,16 @@ class bookNode:
         return string
         
 if __name__=='__main__':
-    obj = bookNode() 
-    import os
-    if os.path.exists('outputPS6.txt'):
-      os.remove('outputPS6.txt')
-    with open('inputPS6.txt', 'r') as read_obj:        
+    obj = bookNode()
+    dir = os.path.dirname(__file__)
+    if os.path.exists(dir+'\outputPS6.txt'):
+        os.remove(dir+'\outputPS6.txt')
+    with open(dir+'\inputPS6.txt', 'r') as read_obj:        
         csv_reader = reader(read_obj)
         for row in csv_reader:
             obj._readBookList(int(row[0].strip()),int(row[1].strip()))
             
-    with open('promptsPS6.txt', 'r') as read_obj:
+    with open(dir+'\promptsPS6.txt', 'r') as read_obj:
         csv_reader = reader(read_obj)
         for row in csv_reader:
             #print(row)
