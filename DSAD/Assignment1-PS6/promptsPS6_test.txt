@@ -1,3 +1,10 @@
 checkOut: 100010
+checkOut: 100009
+checkOut: 100003
+checkOut: 100001
+checkOut: 100001
+checkOut: 100015
 findBook: 100010
+ListTopBooks
 printInventory
+findBook: 100015
