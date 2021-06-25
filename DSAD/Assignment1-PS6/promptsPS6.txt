@@ -1,0 +1,27 @@
+checkOut: 100001
+checkOut: 100002
+checkOut: 100005
+checkOut: 100006
+checkIn: 100001
+checkIn: 100002
+checkOut: 100010
+checkOut: 100006
+checkOut: 100005
+checkOut: 100005
+checkIn: 100005
+checkOut: 100001
+checkOut: 100001
+checkOut: 100001
+findBook: 100006
+checkOut: 100003
+checkOut: 100003
+checkOut: 100003
+checkOut: 100003
+ListTopBooks
+printInventory
+checkOut: 100003
+checkOut: 100003
+checkOut: 100003
+checkIn: 100003
+findBook: 100015
+ListTopBooks
