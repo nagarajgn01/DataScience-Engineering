@@ -59,7 +59,7 @@ class bookNode:
         file.write(string)
         file.close()
         
-    def searchInventory(self,eNode, bkID):
+    def searchInventory(self,eNode,bkID):
         string=''
         if eNode.bookID:
             if eNode.bookID==bkID:
@@ -76,7 +76,7 @@ class bookNode:
                     string = string + self.searchInventory(eNode.right,bkID)
         return string   
 
-    def _findBook(self, eNode, bkID):
+    def _findBook(self,eNode,bkID):
         string = self.searchInventory(eNode, bkID)
         if string=='':
             string = 'Book id '+str(bkID)+' does not exist.\n\n'
@@ -92,8 +92,7 @@ class bookNode:
             string = string + str(x[0])+', '+str(x[2])+'\n'
         string = string +'\n'
         file.write(string)
-        file.close()       
-
+        file.close()
         
 if __name__=='__main__':
     obj = bookNode()
@@ -109,7 +108,6 @@ if __name__=='__main__':
         csv_reader = reader(read_obj)
         for row in csv_reader:
             if len(row)>0:
-                #print(row)
                 if ':' in row[0]:
                     if 'check' in row[0]:
                         inOut,bkID  = row[0].split(':')
@@ -118,9 +116,13 @@ if __name__=='__main__':
                     if 'find' in row[0]:
                         inOut,bkID  = row[0].split(':')
                         obj._findBook(obj,int(bkID.strip()))
+                        continue
                 if 'ListTopBooks' in row[0]:
                     obj._getTopBooks(obj)
                     continue
                 if 'printInventory' in row[0]:
                     obj.printBooks(obj)
+                    continue
+                if 'BooksNotIssued' in row[0]:
+                    obj._notIssued(obj)
                     continue
