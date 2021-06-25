@@ -93,6 +93,9 @@ class bookNode:
         string = string +'\n'
         file.write(string)
         file.close()
+    
+    def _notIssued(self,bkNode):
+        print('Need to work on this') 
         
 if __name__=='__main__':
     obj = bookNode()
