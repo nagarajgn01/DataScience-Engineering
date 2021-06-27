@@ -171,7 +171,7 @@ def _notIssued(temp):
 # and lists those books and the number of times they have been checked out 
 def _getTopBooks(temp):
     lt = getBookList(temp)    
-    if len(res)<1:
+    if len(lt)<1:
         print('No Books Available')
         return
     lt.sort(key=lambda x:x[1],reverse=True)    
