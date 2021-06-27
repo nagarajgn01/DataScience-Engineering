@@ -1,6 +1,5 @@
 import os
 from csv import reader
-import time
 
 class bookNode:
     # The basic structure of the book node in Binary Tree
