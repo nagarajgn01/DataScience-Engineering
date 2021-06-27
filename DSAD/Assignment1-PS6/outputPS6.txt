@@ -28,7 +28,7 @@ There are a total of 10 book titles in the library.
 100009, 20
 100010, 0
 
-Book id 100015 does not exist.
+Book id  100015 does not exist.
 
 Top Books 1: 100003, 7
 Top Books 2: 100001, 4
@@ -48,9 +48,9 @@ There are a total of 10 book titles in the library.
 
 List of books not issued:
 100004
+100009
 100007
 100008
-100009
 
 There are a total of 6 book titles in the library.
 100001, 1
