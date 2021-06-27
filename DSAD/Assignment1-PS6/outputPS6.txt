@@ -1,12 +1,62 @@
 There are a total of 10 book titles in the library.
+100001, 4
+100002, 5
+100003, 15
+100004, 12
+100005, 3
+100006, 2
+100007, 7
+100008, 9
+100009, 20
+100010, 1
+
+All copies of book id 100006 have been checked out
+
+Top Books 1: 100003, 4
+Top Books 2: 100005, 3
+Top Books 3: 100001, 2
+
+There are a total of 10 book titles in the library.
 100001, 3
 100002, 5
-100003, 14
-100004, 11
-100005, 2
-100006, 1
-100007, 6
-100008, 8
-100009, 19
+100003, 11
+100004, 12
+100005, 0
+100006, 0
+100007, 7
+100008, 9
+100009, 20
+100010, 0
+
+Book id 100015 does not exist.
+
+Top Books 1: 100003, 7
+Top Books 2: 100001, 4
+Top Books 3: 100005, 3
+
+There are a total of 10 book titles in the library.
+100001, 1
+100002, 5
+100003, 9
+100004, 12
+100005, 1
+100006, 0
+100007, 7
+100008, 9
+100009, 20
+100010, 0
+
+List of books not issued:
+100004
+100007
+100008
+100009
+
+There are a total of 6 book titles in the library.
+100001, 1
+100002, 5
+100003, 9
+100005, 1
+100006, 0
 100010, 0
 

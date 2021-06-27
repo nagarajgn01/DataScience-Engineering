@@ -1,8 +1,9 @@
 import os
 from csv import reader
+import time
 
 class bookNode:
-    def __init__(self, bkID=None, availCount=None):
+    def __init__(self,bkID=None,availCount=None):
         self.left = None
         self.right = None
         self.bookID = bkID
@@ -88,14 +89,73 @@ class bookNode:
         lt = self.getBookList(bkNode)
         file = open(dir+'\outputPS6.txt','a')
         string = 'There are a total of '+str(len(lt))+' book titles in the library.\n'
-        for i,x in enumerate(lt):
+        for i,x in enumerate(sorted(lt)):
             string = string + str(x[0])+', '+str(x[2])+'\n'
         string = string +'\n'
         file.write(string)
         file.close()
-    
+
+    def removeNode(self,bkID):
+        if self == None :
+            return None
+        if self.left == None and self.right == None:
+            if self.key == bkID:
+                return None
+            else:
+                return self
+        key_node = None
+        q = []
+        q.append(self)
+        while(len(q)):
+            temp = q.pop(0)
+            if temp.bookID == bkID:
+                key_node = temp
+            if temp.left:
+                q.append(temp.left)
+            if temp.right:
+                q.append(temp.right)
+
+        if key_node :
+            x,y,z = temp.bookID,temp.avCntr,temp.chkOutCntr
+            self.deleteDeepest(temp)
+            key_node.bookID = x
+            key_node.avCntr = y
+            key_node.chkOutCntr = z
+
+        return self
+
+    def deleteDeepest(self,d_node):
+        q = []
+        q.append(self)
+        while(len(q)):
+            temp = q.pop(0)
+            if temp is d_node:
+                temp = None
+                return
+            if temp.right:
+                if temp.right is d_node:
+                    temp.right = None
+                    return
+                else:
+                    q.append(temp.right)
+            if temp.left:
+                if temp.left is d_node:
+                    temp.left = None
+                    return
+                else:
+                    q.append(temp.left)
+
     def _notIssued(self,bkNode):
-        print('Need to work on this') 
+        lt = self.getBookList(bkNode)
+        lt = [x for x in lt if x[1]==0]
+        string = 'List of books not issued:\n'
+        for x in lt:
+            string = string + str(x[0])+'\n'
+            self.removeNode(x[0])
+        string = string +'\n'
+        file = open(dir+'\outputPS6.txt','a')
+        file.write(string)
+        file.close()
         
 if __name__=='__main__':
     obj = bookNode()
@@ -106,8 +166,9 @@ if __name__=='__main__':
         csv_reader = reader(read_obj)
         for row in csv_reader:
             obj._readBookList(int(row[0].strip()),int(row[1].strip()))
-            
-    with open(dir+'\promptsPS6_test.txt', 'r') as read_obj:
+
+    start = time.time()        
+    with open(dir+'\promptsPS6.txt', 'r') as read_obj:
         csv_reader = reader(read_obj)
         for row in csv_reader:
             if len(row)>0:
@@ -129,3 +190,4 @@ if __name__=='__main__':
                 if 'BooksNotIssued' in row[0]:
                     obj._notIssued(obj)
                     continue
+    print(f"Runtime of the program is {round(time.time() - start,5)} sec")

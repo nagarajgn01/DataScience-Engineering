@@ -9,9 +9,6 @@ checkOut: 100010
 checkOut: 100006
 checkOut: 100005
 checkOut: 100005
-checkIn: 100005
-checkOut: 100001
-checkOut: 100001
 checkOut: 100001
 findBook: 100006
 checkOut: 100003
@@ -20,9 +17,15 @@ checkOut: 100003
 checkOut: 100003
 ListTopBooks
 printInventory
+checkIn: 100005
+checkOut: 100001
+checkOut: 100001
 checkOut: 100003
 checkOut: 100003
 checkOut: 100003
 checkIn: 100003
 findBook: 100015
 ListTopBooks
+printInventory
+BooksNotIssued
+printInventory
